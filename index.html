@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AJS Store</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/3f0900afc2.js" crossorigin="anonymous"></script>
+
+
+  </head>
+
+
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mynav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">AJS Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!--Cleaning Supplies-->
+            <li class="nav-item dropdown has-megamenu">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">General Household</a>
+              <div class="dropdown-menu megamenu" role="menu">
+                <div class="row g-3">
+                  <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-megamenu text-start">
+                      <h6 class="title" style="font-size: 120%;">Cleaning Supplies</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">All-Purpose Cleansers</a></li>
+                        <li><a href="#">Floor Cleansers</a></li>
+                        <li><a href="#">Cleansing Tools</a></li>
+                        <li><a href="#">Disinfectant Cleansers</a></li>
+                        <li><a href="#">Pest Control</a></li>
+                        <li><a href="#">Mop</a></li>
+                        <li><a href="#">Brooms</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="even col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-megamenu">
+                      <h6 class="title" style="font-size: 120%;">Laundry</h6>
+                      <ul class="list-unstyled even">
+                        <li><a href="#">Bleach</a></li>
+                        <li><a href="#">Dryer Sheets</a></li>
+                        <li><a href="#">Fabric Softeners</a></li>
+                        <li><a href="#">Laundry Detergent</a></li>
+                        <li><a href="#">Laundry Sanitizer</a></li>
+                        <li><a href="#">Scent Boosters</a></li>
+                        <li><a href="#">Stain Removers</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div> 
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-megamenu">
+                      <h6 class="title" style="font-size: 120%;">Bathroom & Toilet</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Air Fresheners</a></li>
+                        <li><a href="#">Bathroom Cleaners</a></li>
+                        <li><a href="#">Drain & Septic Care</a></li>
+                        <li><a href="#">Facial Tissues</a></li>
+                        <li><a href="#">Flushable Wipes</a></li>
+                        <li><a href="#">Hand Soap</a></li>
+                        <li><a href="#">Toilet Bowl Cleaner</a></li>
+                        <li><a href="#">Toilet Paper</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="even col-lg-3 col-md-6 col-sm-12">
+                    <div class="col-megamenu even">
+                      <h6 class="title" style="font-size: 120%;">Kitchen</h6>
+                      <ul class="list-unstyled even">
+                        <li><a href="#">Disposable Tableware</a></li>
+                        <li><a href="#">Dishwashing</a></li>
+                        <li><a href="#">Aluminum Foil</a></li>
+                        <li><a href="#">Food Storage Bags</a></li>
+                        <li><a href="#">Kitchen Cleaners</a></li>
+                        <li><a href="#">Paper Towels</a></li>
+                        <li><a href="#">Plastic Wrap</a></li>
+                        <li><a href="#">Napkins</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+            <!--Personal Care-->
+            <li class="nav-item dropdown has-megamenu">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Personal Care</a>
+              <div class="dropdown-menu megamenu" role="menu">
+                <div class="row g-3">
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="col-megamenu">
+                      <h6 class="title" style="font-size: 120%;">Oral Care</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Toothbrushes</a></li>
+                        <li><a href="#">Toothpaste</a></li>
+                        <li><a href="#">Mouthwash</a></li>
+                        <li><a href="#">Dental floss & picks</a></li>
+                        <li><a href="#">Denture care</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="even col-lg-4 col-md-6 col-sm-12">
+                    <div class="col-megamenu">
+                      <h6 class="title" style="font-size: 120%;">Bath & Body</h6>
+                      <ul class="list-unstyled even">
+                        <li><a href="#">Body Wash</a></li>
+                        <li><a href="#">Shampoo</a></li>
+                        <li><a href="#">Deodorant</a></li>
+                        <li><a href="#">Bar Soap</a></li>
+                        <li><a href="#">Hand Soap</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>  
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="col-megamenu">
+                      <h6 class="title" style="font-size: 120%;">Shave</h6>
+                      <ul class="list-unstyled">
+                        <li><a href="#">Women's Shave</a></li>
+                        <li><a href="#">Men's Shave</a></li>
+                        <li><a href="#">Razors</a></li>
+                        <li><a href="#">Shaving Cream & Gel</a></li>
+                        <li><a href="#">Aftershaves</a></li>
+                        <li><a href="#">Shop All
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+            <style>
+              .navbar .megamenu{ padding: 1rem; }
+              @media all and (min-width: 992px) {
+                
+                .navbar .has-megamenu{position:static!important;}
+                .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+                
+              }	
+              
+              @media(max-width: 991px){
+                .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+                  overflow-y: auto;
+                    max-height: 90vh;
+                    margin-top:10px;
+                }
+              }
+
+              </style>
+              
+              <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function(){
+                      document.querySelectorAll('.dropdown-menu').forEach(function(element){
+                        element.addEventListener('click', function (e) {
+                          e.stopPropagation();
+                        });
+                      })
+                  }); 
+              </script>
+        </ul>
+        <button class="btn icon" id="login-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="btn icon" id="cart-btn">
+          <i class="fa-solid fa-cart-plus"></i>
+        </button>
+        <style>
+          .icon:hover{
+            border-style: none;
+          }
+          .icon{
+            border-style: none;
+          }
+        </style>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search items" aria-label="Search">
+          <button class="btn navbtn" type="submit">Search</button>
+        </form>
+          
+        </div>
+      </div>
+    </nav>
+
+    <!-- Shopping Cart -->
+    <div class="shopping-cart">
+      <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="img/r1.webp" alt="added item">
+          <div class="content">
+              <h5>Tide Clean Breeze HE</h5>
+              <span class="price">5,90€</span>
+              <span class="quantity">qty : 1</span>
+          </div>
+      </div>
+      <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="img/r2.jpg" alt="added item">
+          <div class="content">
+              <h5>Dove Body Wash</h5>
+              <span class="price">1,59€</span>
+              <span class="quantity">qty : 1</span>
+          </div>
+      </div>
+      <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="img/r3.webp" alt="added item">
+          <div class="content">
+              <h5>Scott Rapid</h5>
+              <span class="price">2,20€</span>
+              <span class="quantity">qty : 1</span>
+          </div>
+      </div>
+      <div class="total"> Total : 9,69€ </div>
+      <a href="#" class="checkoutbtn btn">Checkout</a>
+   </div>
+
+  <!-- user login  -->
+   <form action="" class="login-form">
+        <h3>login now</h3>
+        <input type="email" placeholder="your email" class="box">
+        <br>
+        <input type="password" placeholder="your password" class="box">
+        <p>forget your password <a href="#">click here</a></p>
+        <p>don't have an account <a href="#">create now</a></p>
+        <input type="submit" value="login now" class="loginbtn btn">
+  </form>
+
+
+    <!--Slides-->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 550px;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="img/slide1.png" class="d-block w-100" alt="slide1" style="height: 550px;">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="img/slide2.png" class="d-block w-100" alt="slide2" style="height: 550px;">
+        </div>
+        <div class="carousel-item">
+          <img src="img/slide3.png" class="d-block w-100" alt="slide3" style="height: 550px;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!--Recommend-->
+      <div class="row cards">
+        <h4>Recommend Items</h4>
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-4 col-sm-6">
+              <img src="img/r1.webp" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">5,90€</h5>
+                <p class="card-text">Tide Clean Breeze HE, 64 Loads Liquid Laundry Detergent, 92 fl oz</p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-4 col-sm-6">
+              <img src="img/r2.jpg" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">1,59€</h5>
+                <p class="card-text">Dove Body Wash Peony and Rose Oil Cleanser, 22 oz
+                  <br>
+                  <br>
+                </p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-4 col-sm-6">
+              <img src="img/r3.webp" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">2,20€</h5>
+                <p class="card-text">Scott Rapid-Dissolving Toilet Paper, 4 Regular Rolls
+                  <br>
+                  <br>
+                </p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-4 col-sm-6">
+              <img src="img/r4.jpeg" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">28,90€</h5>
+                <p class="card-text">EASYWRING SPINMP MF KIT (Pack of 1)
+                  <br>
+                  <br>
+                  <br>
+                </p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-6 col-sm-6">
+              <img src="img/r5.webp" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">2,80€</h5>
+                <p class="card-text">Bounty Paper Napkins, White and Print, 200 Count
+                  <br>
+                  <br>
+                </p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+        <button class="recbtn col-lg-2 col-md-4 col-sm-6">
+          <a href="#">
+            <div class="card col-lg-2 col-md-4 col-sm-6">
+              <img src="img/r6.webp" class="card-img-top" alt="Recommend Item">
+              <div class="card-body">
+                <h5 class="card-title">1,90€</h5>
+                <p class="card-text">BIC Twin Select Silky Touch Twin Blade Women's Razor, 10 Count</p>
+                <a href="#" class="btn cardbtn" style="width: 125px;">
+                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
+              </div>
+            </div>
+          </a>
+        </button>
+        
+      </div>
+      
+      
+      <!-- Categories -->
+      <div class="categories">
+        <div class="maxwidth">
+            <div class="cattitle">Shop by Categories</div>
+            <ul class="category-list row">
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Informatics</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg"src="img/gadgets.png" alt="Electronics">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Personal care</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/sink.png" alt="Personal Care">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">School supplies</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/office-supplies.png" alt="Office school supplies">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Toys and games</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/board-game.png" alt="Toys and games">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Clothing</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/clothes-rack.png" alt="Clothing">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Irongmongery</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/door-lock.png" alt="Irongmongery">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="categorylist2"></div>
+            <ul class="category-list row">
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Home appliances</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/electric-appliance.png" alt="Home appliances">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Furniture</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/lamp.png" alt="Furniture">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Sports</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/sports.png" alt="Sports">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Beauty</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/makeup-pouch.png" alt="Bueauty">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Baby products</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/baby-products.png" alt="Baby products">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="text-banner-item">
+                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
+                        <div class="text-banner">
+                            <a class="text-banner-a" href="#">
+                                <div class="category-label">Pet accesories</div>
+                                <div class="text-banner_image-container">
+                                    <div class="text-banner_image-background"></div>
+                                    <img class="catimg" src="img/puppy.png" alt="Pet accesories">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <style>
+    
+    .categories{
+        width:100%;
+        margin-right: 0px;
+    }
+    
+    .text-banner{
+        background-color: transparent;
+        width: 300px;
+    }
+    .cattitle {
+        font-size: 25px;
+        width: 400px;
+        margin-right: 0px;
+        position: absolute;
+        font-weight: bold;
+        left: 500px;
+    }
+    
+    .maxwidth{
+        width:100%;
+    }
+    .category-list {
+        text-align: center;
+        justify-items: center;
+        padding: 0px;
+        width:100%;
+    }
+    
+    .text-banner-item {
+        padding: 10px ;
+        min-height: 100px;
+        text-align: center;
+        width:180px;
+    
+    }
+    .category-list {
+        list-style: none;
+        margin: 0;
+        position: relative; bottom:-50px;
+        left:0px;
+    
+    }
+    
+    .text-banner-a {
+        background-color: transparent;
+        text-decoration: none;
+        color:dimgray;
+    }
+    .text-banner-a:hover{
+        background-color: transparent;
+        text-decoration: none;
+        color:#00ADB5;
+        font-weight: bold;
+    }
+    
+    .text-banner_image-container {
+        position: relative;
+
+    }
+    
+    .text-banner_image-background {
+        height: 120px;
+        width: 120px;
+        border-radius: 30%;
+        background: -webkit-gradient(linear,left top,left bottom,from(#f0f0f0),color-stop(49.2%,#fcfcfc),to(#dfdfdf));
+        background: linear-gradient(180deg,#f0f0f0,#fcfcfc 49.2%,#dfdfdf);
+    
+    }
+    
+    .component-wrapper{
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .catimg{
+        width: 70px;
+        max-width: 100%;
+        max-height: 100%;
+        border-style: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        -webkit-transition: -webkit-transform .4s ease;
+        transition: transform .4s ease;
+        transition: -webkit-transform .4s ease;
+        transition: transform .4s ease,-webkit-transform .4s ease;
+        }
+        
+        .catimg:hover{
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: .2s ease-in-out;
+                transition: .2s ease-in-out;
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+        }
+    
+        .category-label{
+            position: relative; top: 150px;
+        }
+    </style>
+
+
+      <!-- Membership -->
+      <div class="memb">
+          <div class="row g-0">
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m1.webp" class="membimg" alt="Membership">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m2.webp" class="membimg img-fluid rounded-start" alt="Membership">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m3.webp" class="membimg img-fluid rounded-start" alt="Membership">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m4.webp" class="membimg img-fluid rounded-start" alt="Membership">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m5.webp" class="membimg img-fluid rounded-start" alt="Membership">
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <img src="img/m6.webp" class="membimg img-fluid rounded-start" alt="Membership">
+            </div>
+          </div>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="site-server-box" data-site="site" data-spm="20">
+        <div class="guacontainer">
+          <div class="site-item">
+            <div class="site-item-img">
+              <img class="guaimg" src="img/dollar.png" alt="Money">
+              <h3>Good quality-price</h3>
+              <p>All the items are a garbain</p>
+            </div>
+          </div>
+          <div class="site-item">
+            <div class="site-item-img ">
+              <img class="guaimg" src="img/shipped.png" alt="Delivery">
+              <h3	h3>Shop anywhere</h3>
+              <p>We ship anywherein the world.</p>
+            </div>
+          </div>
+          <div class="site-item">
+            <div class="site-item-img">
+              <img class="guaimg" src="img/credit-card.png" alt="Payment">
+              <h3>Secure payment</h3>
+              <p>Pay with the safest methods in the world.</p>
+            </div>
+          </div>
+          <div class="site-item" data-spm-anchor-id="a2g0o.best.20.i0.c3df22aeQiLD9a">
+            <div class="site-item-img">	
+              <img class="guaimg" src="img/verified.png" alt="Secure">
+              <h3>insured guarantee</h3>
+              <p>We provide a guarantee for all products from the beginning.</p>
+            </div>
+          </div>
+          <div class="site-item">
+            <div class="site-item-img">
+              <img class="guaimg" src="img/customer-service.png" alt="Support">
+              <h3>Costumer service</h3>
+              <p>24/7 assistance so you can buy without problems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Footer -->
+      <footer  id="ajsfooter">
+
+        <div class="ajssection">
+            <div class="ajscontainer">
+                <div class="ajsrow row">
+                    <div class="ajstext col-md-3 col-sm-6">
+                     <div class="ajsfooter">
+                            <h3 class="ajsfooter-title">About Us</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                            <ul class="ajsfooter-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i> My house</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ajstext col-md-3 col-sm-6">
+                        <div class="ajsfooter">
+                            <h3 class="ajsfooter-title">Categories</h3>
+                            <ul class="ajsfooter-links">
+                                <li><a href="#">Electronics</a></li>
+                                <li><a href="#">Personal care</a></li>
+                                <li><a href="#">Office and school</a></li>
+                                <li><a href="#">Toys and games</a></li>
+                                <li><a href="#">Clothing</a></li>
+                                <li><a href="#">Ironmongery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="clearfix visible-xs"></div> -->
+                        <div class="ajstext col-md-3 col-sm-6">
+                            <div class="ajsfooter">
+                                <h3 class="ajsfooter-title">Information</h3>
+                                <ul class="ajsfooter-links">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Orders and Returns</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ajstext col-md-3 col-sm-6">
+                            <div class="ajsfooter">
+                                <h3 class="ajsfooter-title">Service</h3>
+                                <ul class="ajsfooter-links">
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">View Cart</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Track My Order</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            
+            
+            <div id="ajsbottom-footer" class="ajssection">
+                <div class="ajscontainer2">
+                    <div class="ajsbottomrow">
+                    <div class="col-md-12 text-center">
+                        <ul class="ajsfooter-payments">
+                            <li><a href="#"><i class="fa-brands fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                        </ul>
+                            <span class="copyright" style="color:#B9BABC ; ">
+                            Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by AJS</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+      </footer>
+
+
+
+      
+      
+  
+
+
+
+    <!-- Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  
+  </body>
+</html>
