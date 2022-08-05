@@ -1,0 +1,509 @@
+.navbar{
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+.nav-onscroll { background-color:#EEEEEE; }
+.nav-ontop { background-color:white;}
+.nav-link{
+  color: #303841;
+}
+.nav-link:hover{
+  border-bottom-style: solid;
+  border-color: #00ADB5;
+}
+.even{
+  background-color: #00ADB5;
+  color: white;
+}
+.col-megamenu{
+  font-size: 110%;
+}
+.list-unstyled li{
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+}
+.list-unstyled li:hover{
+  transform: translateX(10px);
+}
+.list-unstyled li a{
+  text-decoration: none;
+  color:#303841;
+}
+.even li a{
+  text-decoration: none;
+  color:white;
+}
+.form-control{
+  border-color: #00ADB5;
+}
+.navbtn{
+  color: #00ADB5;
+  border-radius: 10px;
+  border-color: #00ADB5;
+}
+.navbtn:hover{
+  color: white;
+  background-color: #00ADB5;
+}
+
+/* Shopping Cart */
+.shopping-cart{
+  position: absolute;
+  top:10%; 
+  right:500%;
+  padding:1rem;
+  border-radius: .5rem;
+  width:400px;
+  height: 500px;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.shopping-cart.active{
+  left:50rem;
+  transition: .6s linear;
+  position:fixed;
+}
+
+.shopping-cart .box{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  position: relative;
+  margin:1rem 0;
+}
+
+.shopping-cart .box img{
+  height:100px;
+}
+
+.shopping-cart .box .fa-trash{
+  font-size: 1.5rem;
+  position: absolute;
+  top:50%; right:2rem;
+  cursor: pointer;
+  color:#00ADB5;
+  transform: translateY(-50%);
+}
+
+.shopping-cart .box .fa-trash:hover{
+  color:black;
+}
+
+.shopping-cart .box .content h5{
+  color:black;
+  padding-bottom: 1rem;
+}
+
+.shopping-cart .box .content span{
+  color:black;
+}
+
+shopping-cart .box .content .quantity{
+  padding-left: 1rem;
+}
+
+.shopping-cart .total{
+  font-size: 130%;
+  font-weight: bold;
+  padding:1rem 0;
+  text-align: center;
+  color:black;
+}
+.checkoutbtn{
+  font-size: 110%;
+  font-weight: bold;
+  border: solid;
+  border-color: #00ADB5;
+  color: #00ADB5;
+  position: relative;
+  left: 80px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  border-radius: 30px;
+}
+.checkoutbtn:hover{
+  background-color: #00ADB5;
+  border-color: #00ADB5;
+  color: white;
+}
+
+/* User login */
+.login-form{
+  position: absolute;
+  top:10%; 
+  right:15%;
+  width:20rem;
+  padding:2rem;
+  border-radius: .5rem;
+  background: #fff;
+  text-align: center;
+  z-index: 99;
+  display: none;
+}
+.login-form.active{
+  display: block;
+  transition: .6s linear;
+  position:fixed;
+}
+.login-form h3{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+}
+.login-form .box{
+  width: 250px;
+  height: 30px;
+  margin:.7rem 0;
+  background:#eee;
+  border-radius: .5rem;
+  padding:1rem;
+  font-size: 1rem;
+  color:black;
+  text-transform: none;
+}
+.login-form p{
+  font-size: 1rem;
+  padding:.5rem 0;
+  color:black;
+}
+.login-form p a{
+  color:#00ADB5;
+  text-decoration: underline;
+}
+.loginbtn{
+  font-size: 110%;
+  font-weight: bold;
+  border: solid;
+  border-color: #00ADB5;
+  color: #00ADB5;
+  text-align: center;
+  border-radius: 30px;
+}
+.loginbtn:hover{
+  background-color: #00ADB5;
+  border-color: #00ADB5;
+  color: white;
+}
+
+
+
+/* Recommend */
+.recbtn{
+  border-style: none;
+  background-color: transparent;
+}
+.recbtn a{
+  text-decoration: none;
+}
+.card:hover{
+  box-shadow: 0px 5px 5px #EEEEEE;
+}
+.card-title{
+  color: black;
+}
+.card-text{
+  color: black;
+}
+.card-title:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.card-text:hover{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.cardbtn{
+  color: white;
+  background-color: #00ADB5;
+}
+.cardbtn b{
+  display: none;
+}
+.cardbtn:hover i{
+  display: none;
+}
+.cardbtn:hover b{
+  display: block;
+}
+.cards{
+  width: 100%;
+  position: relative;
+  top: 100px;
+  left: 10px;
+}
+.card{
+  width: 200px;
+}
+
+/* Membership */
+.memb{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  top: 400px;
+}
+.membimg{
+  max-width: 70px;
+}
+
+/* Categories */
+.categories{
+  position: relative;
+  top:200px;
+}
+.cattitle {
+  position:relative;
+  left: 300px;
+  top: 30px;
+}
+
+.category-list {
+/*     display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(70px,1fr));
+  grid-column-gap: 60px;
+  grid-row-gap: 5px; */
+  text-align: center;
+  justify-items: center;
+  position:relative; left:110px;
+  padding: 20px;
+}
+
+.text-banner-item{
+  float: left;
+  padding: 30px 0;
+  min-height: 100px;
+  text-align: center;
+}
+.category-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  position: relative; bottom: 100px;
+}
+
+.text-banner-item {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.text-banner-a {
+  background-color: transparent;
+  text-decoration: none;
+  color:dimgray;
+}
+
+.text-banner_image-container {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.text-banner_image-background {
+  height: 107px;
+  width: 107px;
+  border-radius: 30%;
+  background: -webkit-gradient(linear,left top,left bottom,from(#f0f0f0),color-stop(49.2%,#fcfcfc),to(#dfdfdf));
+  background: linear-gradient(180deg,#f0f0f0,#fcfcfc 49.2%,#dfdfdf);
+
+}
+
+.component-wrapper{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.catimg{
+  width: 60px;
+  max-width: 100%;
+  max-height: 100%;
+  border-style: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease,-webkit-transform .4s ease;
+  }
+  
+  .catimg:hover{
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          -webkit-transition: .2s ease-in-out;
+          transition: .2s ease-in-out;
+          -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  }
+
+  .category-label{
+      position: relative; top: 150px;
+  }
+
+
+/* Guarantee */
+.site-server-box {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  margin: 5px;
+  position: relative;
+  top: 400px;
+}
+
+.site-item {
+  float: left;
+  width: 20%;
+  padding: 30px 0;
+  min-height: 228px;
+  text-align: center;
+  position: relative;
+}
+
+.site-item .i-great {
+  background: url(//ae01.alicdn.com/kf/H6c6dc25…m.png) no-repeat 0 0;
+  background-size: cover;
+}
+
+.site-item .icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.site-item h3{
+  font-size: 15px;
+  line-height: 30px;
+  margin-bottom: 0px;
+  color: #333;
+  font-weight: 600;
+}
+
+.site-item p{
+  margin-top: 10px;
+  line-height: 14px;
+  color: #999;
+  padding: 0 10px;
+  font-size: 12px;
+  position: relative; bottom:10px;
+}
+
+.site-item-img{
+  width:60%;
+  height:40%;
+}
+
+.guaimg{
+  max-width: 20%;
+  max-height: 20%;
+}
+
+/* Footer */
+.ajsfooter-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ajsrow{
+  width:100%;
+  height: 100px;
+}
+
+.ajstext{
+  text-align: justify;
+  justify-content: center;
+  position: relative; left: 30px;
+  width: 310px;
+  bottom: 175px;
+}
+.ajscontainer{
+  background-color:#15161D;
+  height: 400px;
+}
+#ajsfooter {
+  color: #EEEE;
+  position: relative;
+  top: 550px;
+  height: 325px;
+}
+
+#ajsbottom-footer {
+  background-color: #2B2D42;
+  z-index:99;
+}
+
+.ajsfooter {
+  margin: 30px 0px;
+}
+
+.ajsfooter-title {
+  color: #EEEE;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0px 0px 30px;
+}
+
+.ajsfooter-links li+li {
+  margin-top: 15px;
+}
+
+.ajsfooter-links li a {
+  color: #B9BABC;
+}
+
+.ajsfooter-links li i {
+  margin-right: 15px;
+  color: #00ADB5  ;
+  width: 14px;
+  text-align: center;
+}
+
+.ajsfooter-links li a:hover {
+  color: #00ADB5  ;
+}
+
+.copyright {
+  margin-top: 30px;
+    display: block;
+  font-size: 12px;
+}
+
+.ajsfooter-payments li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.ajsfooter-payments li a {
+  color: #15161D;
+  font-size: 36px;
+  display: block;
+}
+
+
+.ajsfa {
+display: inline-block;
+font: 14px/1 FontAwesome;
+font-size: inherit;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+}
+
