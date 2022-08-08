@@ -1,37 +1,40 @@
 .navbar{
-  font-weight: bold;
   transition: 0.3s ease-in-out;
 }
 .nav-onscroll { background-color:#EEEEEE; }
 .nav-ontop { background-color:white;}
 .nav-link{
   color: #303841;
+  font-weight: bold;
 }
 .nav-link:hover{
   border-bottom-style: solid;
   border-color: #00ADB5;
 }
-.even{
+/* .even{
   background-color: #00ADB5;
   color: white;
-}
+} */
 .col-megamenu{
   font-size: 110%;
 }
-.list-unstyled li{
+.navhr{
+  width: 75%;
+}
+.navlist-unstyled li{
   transition: transform 0.3s ease;
   transform: translateX(0px);
 }
-.list-unstyled li:hover{
+.navlist-unstyled li:hover{
   transform: translateX(10px);
 }
-.list-unstyled li a{
+.navlist-unstyled li a{
   text-decoration: none;
   color:#303841;
 }
 .even li a{
   text-decoration: none;
-  color:white;
+  color:black;
 }
 .form-control{
   border-color: #00ADB5;
@@ -251,7 +254,7 @@ shopping-cart .box .content .quantity{
   width: 100%;
   text-align: center;
   position: relative;
-  top: 400px;
+  top: 150px;
 }
 .membs{
   width: 100%;
@@ -264,7 +267,7 @@ shopping-cart .box .content .quantity{
 /* Categories */
 .categories{
   position: relative;
-  top:100px;
+  top:150px;
 }
 .cattitle {
   position:relative;
@@ -419,13 +422,19 @@ shopping-cart .box .content .quantity{
 }
 
 /* Footer */
+footer{
+/*   position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  position: absolute;
+  top: 3000px;
+}
 .ajsfooter{
   background-color:#15161D;
   color: #EEEE;
   text-align:center;
   width: 100%;
-  position: absolute;
-  top: 4000px;
 }
 
 .ajsfooter-container{
@@ -446,6 +455,13 @@ shopping-cart .box .content .quantity{
   position: relative; left:85px;
   width:65%;
   
+}
+.list-unstyled li{
+  transition: transform 0.3s ease;
+  transform: translateX(0px);
+}
+.list-unstyled li:hover{
+  transform: translateX(10px);
 }
 
 .text-white{
