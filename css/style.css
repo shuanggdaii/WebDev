@@ -27,10 +27,15 @@
 }
 .navlist-unstyled li:hover{
   transform: translateX(10px);
+  color: #00ADB5;
 }
 .navlist-unstyled li a{
   text-decoration: none;
   color:#303841;
+}
+.navlist-unstyled li a:hover{
+  text-decoration: none;
+  color:#00ADB5;
 }
 .even li a{
   text-decoration: none;
