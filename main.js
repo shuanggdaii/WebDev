@@ -25,3 +25,19 @@ document.querySelector('#login-btn').onclick = () =>{
     loginForm.classList.toggle('active');
     shoppingCart.classList.remove('active');
 }
+
+
+
+window.addEventListener('mouseup', function(event){
+	var box = document.getElementById('shoppingCart');
+	if (event.target != box && event.target.parentNode != box){
+        box.classList.remove('active');
+    }
+});
+
+window.addEventListener('mouseup', function(event){
+	var box = document.getElementById('loginForm');
+	if (event.target != box && event.target.parentNode != box){
+        box.classList.remove('active');
+    }
+});
