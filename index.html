@@ -1,992 +1,1113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>AJS Store</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"/>
+
     <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
-
+    
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/3f0900afc2.js" crossorigin="anonymous"></script>
 
-
+    <script nonce="29c8ce91-0b43-4e23-a166-da1d51a9b6c3">
+      (function (w, d) {
+        !(function (a, e, t, r) {
+          a.zarazData = a.zarazData || {};
+          a.zarazData.executed = [];
+          a.zaraz = { deferred: [] };
+          a.zaraz.q = [];
+          a.zaraz._f = function (e) {
+            return function () {
+              var t = Array.prototype.slice.call(arguments);
+              a.zaraz.q.push({ m: e, a: t });
+            };
+          };
+          for (const e of ["track", "set", "ecommerce", "debug"])
+            a.zaraz[e] = a.zaraz._f(e);
+          a.zaraz.init = () => {
+            var t = e.getElementsByTagName(r)[0],
+              z = e.createElement(r),
+              n = e.getElementsByTagName("title")[0];
+            n && (a.zarazData.t = e.getElementsByTagName("title")[0].text);
+            a.zarazData.x = Math.random();
+            a.zarazData.w = a.screen.width;
+            a.zarazData.h = a.screen.height;
+            a.zarazData.j = a.innerHeight;
+            a.zarazData.e = a.innerWidth;
+            a.zarazData.l = a.location.href;
+            a.zarazData.r = e.referrer;
+            a.zarazData.k = a.screen.colorDepth;
+            a.zarazData.n = e.characterSet;
+            a.zarazData.o = new Date().getTimezoneOffset();
+            a.zarazData.q = [];
+            for (; a.zaraz.q.length; ) {
+              const e = a.zaraz.q.shift();
+              a.zarazData.q.push(e);
+            }
+            z.defer = !0;
+            for (const e of [localStorage, sessionStorage])
+              Object.keys(e || {})
+                .filter((a) => a.startsWith("_zaraz_"))
+                .forEach((t) => {
+                  try {
+                    a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t));
+                  } catch {
+                    a.zarazData["z_" + t.slice(7)] = e.getItem(t);
+                  }
+                });
+            z.referrerPolicy = "origin";
+            z.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(a.zarazData)));
+            t.parentNode.insertBefore(z, t);
+          };
+          ["complete", "interactive"].includes(e.readyState)
+            ? zaraz.init()
+            : a.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, 0, "script");
+      })(window, document);
+    </script>
   </head>
 
 
-
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mynav">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">AJS Store</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <header>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!--Cleaning Supplies-->
-            <li class="nav-item dropdown has-megamenu">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">General Household</a>
-              <div class="dropdown-menu megamenu" role="menu">
-                <div class="row g-3">
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="col-megamenu text-start">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Cleaning Supplies</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled">
-                        <li><a href="#">All-Purpose Cleansers</a></li>
-                        <li><a href="#">Floor Cleansers</a></li>
-                        <li><a href="#">Cleansing Tools</a></li>
-                        <li><a href="#">Disinfectant Cleansers</a></li>
-                        <li><a href="#">Pest Control</a></li>
-                        <li><a href="#">Mop</a></li>
-                        <li><a href="#">Brooms</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="even col-lg-3 col-md-6 col-sm-12">
-                    <div class="col-megamenu">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Laundry</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled even">
-                        <li><a href="#">Bleach</a></li>
-                        <li><a href="#">Dryer Sheets</a></li>
-                        <li><a href="#">Fabric Softeners</a></li>
-                        <li><a href="#">Laundry Detergent</a></li>
-                        <li><a href="#">Laundry Sanitizer</a></li>
-                        <li><a href="#">Scent Boosters</a></li>
-                        <li><a href="#">Stain Removers</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
-                    </div> 
-                  </div>
+      <!-- Header -->
+      <div id="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="header-logo">
+                <a href="#" class="logo">
+                  AJS Store
+                </a>
+              </div>
+            </div>
 
-                  <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="col-megamenu">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Bathroom & Toilet</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled">
-                        <li><a href="#">Air Fresheners</a></li>
-                        <li><a href="#">Bathroom Cleaners</a></li>
-                        <li><a href="#">Drain & Septic Care</a></li>
-                        <li><a href="#">Facial Tissues</a></li>
-                        <li><a href="#">Flushable Wipes</a></li>
-                        <li><a href="#">Hand Soap</a></li>
-                        <li><a href="#">Toilet Bowl Cleaner</a></li>
-                        <li><a href="#">Toilet Paper</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
+            <div class="col-md-6">
+              <div class="header-search">
+                <form>
+                  <select class="input-select">
+                    <option value="0">All Categories</option>
+                    <option value="1">Category 01</option>
+                    <option value="1">Category 02</option>
+                  </select>
+                  <input class="input" placeholder="Search Product" />
+                  <button class="search-btn">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="col-md-3 clearfix">
+              <div class="header-ctn">
+                <div>
+                  <a href="#">
+                    <i class="fa fa-heart-o"></i>
+                    <span>Your Wishlist</span>
+                    <div class="qty">2</div>
+                  </a>
+                </div>
+
+                <div class="dropdown">
+                  <a
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Your Cart</span>
+                    <div class="qty">5</div>
+                  </a>
+                  <div class="cart-dropdown">
+                    <div class="cart-list">
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img
+                            src="img/r4.jpeg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#">EASYWRING SPINMP MF KIT (Pack of 1)
+                            </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">                                <select class="input-select">
+                              <option value="1">1x</option>
+                              <option value="2">2x</option>
+                              <option value="3">3x</option>
+                              <option value="4">4x</option>
+                              <option value="5">5x</option>
+                            </select></span>28,90€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img
+                            src="img/r2.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#">Dove Body Wash Peony and Rose Oil Cleanser, 22 oz
+                            </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">
+                              <select class="input-select">
+                                <option value="1">1x</option>
+                                <option value="2">2x</option>
+                                <option value="3">3x</option>
+                                <option value="4">4x</option>
+                                <option value="5">5x</option>
+                              </select>
+                            </span>1,59€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
+
+
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img
+                            src="img/r5.webp"
+                            alt=""
+                          />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#">Bounty Paper Napkins, White and Print, 200 Count
+                            </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">                  
+                                <select class="input-select">
+                                  <option value="1">1x</option>
+                                  <option value="2">2x</option>
+                                  <option value="3">3x</option>
+                                  <option value="4">4x</option>
+                                  <option value="5">5x</option>
+                                </select>
+                          </span>2,80€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  
-                  
-                  <div class="even col-lg-3 col-md-6 col-sm-12">
-                    <div class="col-megamenu even">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Kitchen</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled even">
-                        <li><a href="#">Disposable Tableware</a></li>
-                        <li><a href="#">Dishwashing</a></li>
-                        <li><a href="#">Aluminum Foil</a></li>
-                        <li><a href="#">Food Storage Bags</a></li>
-                        <li><a href="#">Kitchen Cleaners</a></li>
-                        <li><a href="#">Paper Towels</a></li>
-                        <li><a href="#">Plastic Wrap</a></li>
-                        <li><a href="#">Napkins</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
+
+                    <div class="cart-summary">
+                      <small>5 Item(s) selected</small>
+                      <h5>SUBTOTAL: 36,47€</h5>
+                    </div>
+                    <div class="cart-btns">
+                      <a href="#">View Cart</a>
+                      <a href="#"
+                        >Checkout <i class="fa fa-arrow-circle-right"></i
+                      ></a>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
 
-
-            <!--Personal Care-->
-            <li class="nav-item dropdown has-megamenu">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Personal Care</a>
-              <div class="dropdown-menu megamenu" role="menu">
-                <div class="row g-3">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="col-megamenu">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Oral Care</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled">
-                        <li><a href="#">Toothbrushes</a></li>
-                        <li><a href="#">Toothpaste</a></li>
-                        <li><a href="#">Mouthwash</a></li>
-                        <li><a href="#">Dental floss & picks</a></li>
-                        <li><a href="#">Denture care</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="even col-lg-4 col-md-6 col-sm-12">
-                    <div class="col-megamenu">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Bath & Body</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled even">
-                        <li><a href="#">Body Wash</a></li>
-                        <li><a href="#">Shampoo</a></li>
-                        <li><a href="#">Deodorant</a></li>
-                        <li><a href="#">Bar Soap</a></li>
-                        <li><a href="#">Hand Soap</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
-                    </div>  
-                  </div>
-
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="col-megamenu">
-                      <h6 class="title" style="font-size: 120%; font-weight: bold;">Shave</h6>
-                      <hr class="navhr">
-                      <ul class="navlist-unstyled">
-                        <li><a href="#">Women's Shave</a></li>
-                        <li><a href="#">Men's Shave</a></li>
-                        <li><a href="#">Razors</a></li>
-                        <li><a href="#">Shaving Cream & Gel</a></li>
-                        <li><a href="#">Aftershaves</a></li>
-                        <li><a href="#">Shop All
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                          </svg>
-                        </a></li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="menu-toggle">
+                  <a href="#">
+                    <i class="fa fa-bars"></i>
+                    <span>Menu</span>
+                  </a>
                 </div>
               </div>
-            </li>
-
-
-            <style>
-              .navbar .megamenu{ padding: 1rem; }
-              @media all and (min-width: 992px) {
-                
-                .navbar .has-megamenu{position:static!important;}
-                .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
-                
-              }	
-              
-              @media(max-width: 991px){
-                .navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
-                  overflow-y: auto;
-                    max-height: 90vh;
-                    margin-top:10px;
-                }
-              }
-
-              </style>
-              
-              <script type="text/javascript">
-                document.addEventListener("DOMContentLoaded", function(){
-                      document.querySelectorAll('.dropdown-menu').forEach(function(element){
-                        element.addEventListener('click', function (e) {
-                          e.stopPropagation();
-                        });
-                      })
-                  }); 
-              </script>
-        </ul>
-        <button class="btn icon" id="login-btn">
-          <i class="fa-solid fa-user"></i>
-        </button>
-        <button class="btn icon" id="cart-btn">
-          <i class="fa-solid fa-cart-plus"></i>
-        </button>
-        <style>
-          .icon:hover{
-            border-style: none;
-          }
-          .icon{
-            border-style: none;
-          }
-        </style>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search items" aria-label="Search">
-          <button class="btn navbtn" type="submit">Search</button>
-        </form>
-          
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
 
-    <!-- Shopping Cart -->
-    <div class="shopping-cart" id="shoppingCart">
-      <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="img/r1.webp" alt="added item">
-          <div class="content">
-              <h5>Tide Clean Breeze HE</h5>
-              <span class="price">5,90€</span>
-              <span class="quantity">qty : 1</span>
+<!-- Recommend -->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 class="title">Recommend Products</h3>
+            </div>
           </div>
-      </div>
-      <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="img/r2.jpg" alt="added item">
-          <div class="content">
-              <h5>Dove Body Wash</h5>
-              <span class="price">1,59€</span>
-              <span class="quantity">qty : 1</span>
+
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab1" class="tab-pane active">
+                  <div class="products-slick" data-nav="#slick-nav-1">
+                    <div class="product">
+                      <div class="product-img">
+                        <img
+                          src="img/r1.webp"
+                          alt="Recommend Product"
+                        />
+                        <div class="product-label">
+                          <span class="sale">-30%</span>
+                          <span class="new">NEW</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">Tide Clean Breeze HE, 64 Loads Liquid Laundry Detergent, 92 fl oz</a>
+                        </h3>
+                        <h4 class="product-price">
+                          5,90€ <del class="product-old-price">8,42€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img
+                          src="img/r2.jpg"
+                          alt="Recommend Product"
+                        />
+                        <div class="product-label">
+                          <span class="new">NEW</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">Dove Body Wash Peony and Rose Oil Cleanser, 22 oz</a>
+                          <br>
+                          <br>
+                        </h3>
+                        <h4 class="product-price">
+                          1,59€ <del class="product-old-price">3,59€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img
+                          src="img/r3.webp"
+                          alt="Recommend Product"
+                        />
+                        <div class="product-label">
+                          <span class="sale">-30%</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">Scott Rapid-Dissolving Toilet Paper, 4 Regular Rolls</a>
+                          <br>
+                          <br>
+                        </h3>
+                        <h4 class="product-price">
+                          2,20€ <del class="product-old-price">3,14€</del>
+                        </h4>
+                        <div class="product-rating"></div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img
+                          src="img/r4.jpeg"
+                          alt="Recommend Product"
+                        />
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">EASYWRING SPINMP MF KIT (Pack of 1)</a>
+                          <br>
+                          <br>
+                        </h3>
+                        <h4 class="product-price">
+                          28,90€ <del class="product-old-price">35,99€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img
+                          src="img/r5.webp"
+                          alt="Recommend Product"
+                        />
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">Bounty Paper Napkins, White and Print, 200 Count</a>
+                          <br>
+                          <br>
+                        </h3>
+                        <h4 class="product-price">
+                          2,80€ <del class="product-old-price">5,99€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-1" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
-      <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="img/r3.webp" alt="added item">
-          <div class="content">
-              <h5>Scott Rapid</h5>
-              <span class="price">2,20€</span>
-              <span class="quantity">qty : 1</span>
-          </div>
+    </div>
+
+
+    <!-- Membership -->
+    <div class="memb">
+      <div class="membs row container-fluid">
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m1.webp" class="membimg" alt="Membership">
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m2.webp" class="membimg img-fluid rounded-start" alt="Membership">
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m3.webp" class="membimg img-fluid rounded-start" alt="Membership">
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m4.webp" class="membimg img-fluid rounded-start" alt="Membership">
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m5.webp" class="membimg img-fluid rounded-start" alt="Membership">
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m6.webp" class="membimg img-fluid rounded-start" alt="Membership">
+        </div>
       </div>
-      <div class="total"> Total : 9,69€ </div>
-      <a href="#" class="checkoutbtn btn">Checkout</a>
    </div>
 
-  <!-- user login  -->
-   <form action="" class="login-form" id="loginForm">
-        <h3>login now</h3>
-        <input type="email" placeholder="your email" class="box">
-        <br>
-        <input type="password" placeholder="your password" class="box">
-        <p>forget your password <a href="#">click here</a></p>
-        <p>don't have an account <a href="#">create now</a></p>
-        <input type="submit" value="login now" class="loginbtn btn">
-  </form>
 
-
-    <!--Slides-->
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 550px;">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="img/slide1.png" class="d-block w-100" alt="slide1" style="height: 550px;">
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/slide2.png" class="d-block w-100" alt="slide2" style="height: 550px;">
-        </div>
-        <div class="carousel-item">
-          <img src="img/slide3.png" class="d-block w-100" alt="slide3" style="height: 550px;">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-    <!--Recommend-->
-      <div class="carddiv row">
-        <h4>Recommend Items</h4>
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-              <img src="img/r1.webp" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">5,90€</h5>
-                <p class="card-text">Tide Clean Breeze HE, 64 Loads Liquid Laundry Detergent, 92 fl oz</p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-              <img src="img/r2.jpg" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">1,59€</h5>
-                <p class="card-text">Dove Body Wash Peony and Rose Oil Cleanser, 22 oz
-                  <br>
-                  <br>
-                </p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-              <img src="img/r3.webp" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">2,20€</h5>
-                <p class="card-text">Scott Rapid-Dissolving Toilet Paper, 4 Regular Rolls
-                  <br>
-                  <br>
-                </p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6 col-xs-6">
-              <img src="img/r4.jpeg" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">28,90€</h5>
-                <p class="card-text">EASYWRING SPINMP MF KIT (Pack of 1)
-                  <br>
-                  <br>
-                  <br>
-                </p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6">
-              <img src="img/r5.webp" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">2,80€</h5>
-                <p class="card-text">Bounty Paper Napkins, White and Print, 200 Count
-                  <br>
-                  <br>
-                </p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-        <button class="recbtn col-lg-2 col-md-4 col-sm-6 col-xs-6">
-          <a href="#">
-            <div class="card col-lg-2 col-md-4 col-sm-6 col-xs-6">
-              <img src="img/r6.webp" class="card-img-top" alt="Recommend Item">
-              <div class="card-body">
-                <h5 class="card-title">1,90€</h5>
-                <p class="card-text">BIC Twin Select Silky Touch Twin Blade Women's Razor, 10 Count</p>
-                <a href="#" class="btn cardbtn" style="width: 125px;">
-                  <i class="fa-solid fa-cart-arrow-down"></i><b>Add to cart</b></a>
-              </div>
-            </div>
-          </a>
-        </button>
-        
-      </div>
-      
-      <!-- Membership -->
-      <div class="memb">
-        <div class="membs row container-fluid">
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m1.webp" class="membimg" alt="Membership">
-          </div>
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m2.webp" class="membimg img-fluid rounded-start" alt="Membership">
-          </div>
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m3.webp" class="membimg img-fluid rounded-start" alt="Membership">
-          </div>
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m4.webp" class="membimg img-fluid rounded-start" alt="Membership">
-          </div>
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m5.webp" class="membimg img-fluid rounded-start" alt="Membership">
-          </div>
-          <div class="memb-banner col-lg-2 col-md-6 col-6">
-            <img src="img/m6.webp" class="membimg img-fluid rounded-start" alt="Membership">
-          </div>
-        </div>
-     </div>
-      
-      <!-- Categories -->
-      <div class="categories">
-        <div class="maxwidth">
-            <div class="cattitle">Shop by categories</div>
-            <ul class="category-list row">
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Informatics</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg"src="img/gadgets.png" alt="Electronics">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Personal care</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/sink.png" alt="Personal Care">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">School supplies</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/office-supplies.png" alt="Office school supplies">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Toys and games</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/board-game.png" alt="Toys and games">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Clothing</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/clothes-rack.png" alt="Clothing">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Irongmongery</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/door-lock.png" alt="Irongmongery">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="categorylist2"></div>
-            <ul class="category-list row">
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Home appliances</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/electric-appliance.png" alt="Home appliances">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Furniture</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/lamp.png" alt="Furniture">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Sports</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/sports.png" alt="Sports">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Beauty</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/makeup-pouch.png" alt="Bueauty">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Baby products</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/baby-products.png" alt="Baby products">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="text-banner-item">
-                    <div class="component-wrapper col-lg-2 col-md-4 col-sm-6">
-                        <div class="text-banner">
-                            <a class="text-banner-a" href="#">
-                                <div class="category-label">Pet accesories</div>
-                                <div class="text-banner_image-container">
-                                    <div class="text-banner_image-background"></div>
-                                    <img class="catimg" src="img/puppy.png" alt="Pet accesories">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <style>
-        
-        .categories{
-            width:100%;
-            margin-right: 0px;
-          
-        }
-        
-        .text-banner{
-            background-color: transparent;
-            width: 200px;
-        }
-        .cattitle {
-            font-size: 25px;
-            width: 350px;
-            margin-right: 0px;
-            padding:50px;
-            font-weight: bold;
-        }
-        
-        .maxwidth{
-            width:100%;
-        }
-        .category-list {
-        /*     display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(70px,1fr));
-            grid-column-gap: 60px;
-            grid-row-gap: 5px; */
-            text-align: center;
-            justify-items: center;
-            padding: 10px;
-            width:100%;
-            position:relative;
-            top: -20px;
-        }
-        
-        .text-banner-item {
-            padding: 0px ;
-            margin: 10px;
-            min-height: 100px;
-            text-align: center;
-            width:170px;
-        
-        }
-        .text-banner-a {
-            background-color: transparent;
-            text-decoration: none;
-            color:dimgray;
-        }
-        
-        .text-banner_image-container {
-            position: relative;
-           display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex; 
-           -webkit-box-align: center;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
-            justify-content: center; 
-            max-width:300px;
-        }
-        
-        .text-banner_image-background {
-            height: 140px;
-            width: 140px;
-            border-radius: 30%;
-            background: -webkit-gradient(linear,left top,left bottom,from(#f0f0f0),color-stop(49.2%,#fcfcfc),to(#dfdfdf));
-            background: linear-gradient(180deg,#f0f0f0,#fcfcfc 49.2%,#dfdfdf);
-        
-        }
-        
-        .component-wrapper{
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        
-        .catimg{
-            width: 100px;
-            max-width: 100%;
-            max-height: 100%;
-            border-style: none;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            position: absolute;
-            -webkit-transition: -webkit-transform .4s ease;
-            transition: transform .4s ease;
-            transition: -webkit-transform .4s ease;
-            transition: transform .4s ease,-webkit-transform .4s ease;
-            }
-            
-            .catimg:hover{
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-transition: .2s ease-in-out;
-                    transition: .2s ease-in-out;
-                    -webkit-transform: scale(1.3);
-                    transform: scale(1.3);
-            }
-        
-            .category-label{
-                position: relative; top: 200px;
-            }
-        </style>
-
-
-
-      <!-- Guarantee -->
-        <div class="guacontainer row"> 
-          
-            <div class="gua-site-item">
-              <div class="gua-site-item-img">
-                <img class="guaimg" src="img/dollar.png" alt="Money">
-                <h5>Good quality-price</h5>
-                <p>All the items are a garbain</p>
-              </div>
-            </div>
-          
-            <div class="gua-site-item">
-              <div class="gua-site-item-img">
-                <img class="guaimg" src="img/shipped.png" alt="Delivery">
-                <h5>Shop anywhere</h5>
-                <p>We ship anywherein the world.</p>
-              </div>
-            </div>
-          
-            <div class="gua-site-item">
-              <div class="gua-site-item-img">
-                <img class="guaimg" src="img/credit-card.png" alt="Payment">
-                <h5>Secure payment</h5>
-                <p>Pay with the safest methods in the world.</p>
-              </div>
-            </div>
-
-          
-            <div class="gua-site-item">
-              <div class="gua-site-item-img">	
-                <img class="guaimg" src="img/verified.png" alt="Secure">
-                <h5>insured guarantee</h5>
-                <p>We provide a guarantee for all products from the beginning.</p>
-              </div>
-            </div>
-
-
-            <div class="gua-site-item">
-              <div class="gua-site-item-img">
-                <img class="guaimg" src="img/customer-service.png" alt="Support">
-                <h5>Costumer service</h5>
-                <p>24/7 assistance so you can buy without problems.</p>
-              </div>
-            </div>
-
-        </div>
-
-
-      <!-- Footer -->
-      <footer class="ajsfooter">
-
-        <!--Credit Card-->
-        <div id="ajsbottom-footer" class="ajssection">
-          <div class="ajscontainer">
-              <div class="ajsbottomrow">
-              <div class="col-md-12 text-center">
-                  <ul class="ajsfooter-payments">
-                      <li><a href="#"><i class="fa-brands fa-cc-visa"></i></a></li>
-                      <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                  </ul>
-              </div>
-              </div>
-          </div>
-        </div>
-        <!--Credot Card-->
-        
-        <!-- Grid container -->
-        <div class="ajsfooter-container">
-          <!-- Section: Social media -->
-          <section class="footer-social-media">
-            <!-- Facebook -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-      
-            <!-- Twitter -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-twitter"></i
-            ></a>
-      
-            <!-- Google -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-google"></i
-            ></a>
-      
-            <!-- Instagram -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-instagram"></i
-            ></a>
-      
-            <!-- Linkedin -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-      
-            <!-- Github -->
-            <a class="ajsfooter-btn btn" href="#!" role="button"
-              ><i class="fab fa-github"></i
-            ></a>
-          </section>
-          <!-- Section: Social media -->
-      
-          <!-- Section: Form -->
-          <section class="ajsfooter-form">
-            <form action="">
-              <!--Grid row-->
-              <div class="ajsfooter-text row d-flex justify-content-center">
-                <!--Grid column-->
-                <div class="col-auto">
-                  <p class="pt-2">
-                    <strong>Sign up for our newsletter</strong>
-                  </p>
-                </div>
-                <!--Grid column-->
-      
-                <!--Grid column-->
-                
-                <div class="col-md-5 col-12">
-                  <!-- Email input -->
-                  <div class="form-outline form-white mb-4">
-                    <input type="email" id="form5Example21" class="form-control" placeholder="Enter your E-mail"/>
-                    <label class="form-label" for="form5Example21">Email address</label>
+    <!-- Categories -->
+    <div class="categories">
+      <div class="maxwidth">
+          <div class="cattitle">Shop by categories</div>
+          <ul class="category-list">
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Informatics</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg"src="img/gadgets.png" alt="Electronics">
+                              </div>
+                          </a>
+                      </div>
                   </div>
-                </div>
-                <!--Grid column-->
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Personal care</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/sink.png" alt="Personal Care">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">School supplies</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/office-supplies.png" alt="Office school supplies">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Toys and games</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/board-game.png" alt="Toys and games">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Clothing</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/clothes-rack.png" alt="Clothing">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Irongmongery</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/door-lock.png" alt="Irongmongery">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      <div class="categorylist2">
+          <ul class="category-list">
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Home appliances</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/electric-appliance.png" alt="Home appliances">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Furniture</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/lamp.png" alt="Furniture">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Sports</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/sports.png" alt="Sports">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Beauty</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/makeup-pouch.png" alt="Bueauty">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Baby products</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/baby-products.png" alt="Baby products">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+              <li class="text-banner-item">
+                  <div class="component-wrapper">
+                      <div class="text-banner">
+                          <a class="text-banner-a" href="#">
+                              <div class="category-label">Pet accesories</div>
+                              <div class="text-banner_image-container">
+                                  <div class="text-banner_image-background"></div>
+                                  <img class="catimg" src="img/puppy.png" alt="Pet accesories">
+                              </div>
+                          </a>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+  
+  <style>
       
-                <!--Grid column-->
-                <div class="col-auto">
-                  <!-- Submit button -->
-                  <button type="submit" class="btn footerbtn mb-4">
-                    Subscribe
-                  </button>
-                </div>
-                <!--Grid column-->
-              </div>
-              <!--Grid row-->
-            </form>
-          </section>
-          <!-- Section: Form -->
+      .categories{
+          width:100%;
+          margin-right: 0px;
+          position: relative;
+          top: 100px;
+        
+      }
       
-          <!-- Section: Text -->
-          <section class="mb-4">
-            <p>
-              This is a e-commerce template which is not looking very good but we're working on it. 
-            </p>
-          </section>
-          <!-- Section: Text -->
+      .text-banner{
+          background-color: transparent;
+          width: 160px;
+      }
+      .cattitle {
+          font-size: 25px;
+          width: 350px;
+          margin-right: 0px;
+          padding:50px;
+          font-weight: bold;
+      }
       
-          <!-- Section: Links -->
-          <section class="">
+      .maxwidth{
+          width:100%;
+      }
+      .category-list {
+          display: grid;
+          grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+          grid-gap:10px;
+          text-align: center;
+          justify-items: center;
+          padding: 10px;
+          position:relative;
+          top: -20px;
+          width:100%;
+      }
+      
+      .text-banner-item {
+          display: grid;
+          grid-template-columns: repeat(autofit, (1fr));
+          grid-gap: 10px;
+          grid-auto-rows: minmax(100px, auto);
+          padding: 0px ;
+          margin: 10px;
+          min-height: 100px;
+          text-align: center;
+          width:170px;
+      
+      }
+      .text-banner-a {
+          background-color: transparent;
+          text-decoration: none;
+          color:dimgray;
+      }
+      
+      .text-banner_image-container {
+          position: relative;
+         display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex; 
+         -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center; 
+          max-width:300px;
+      }
+      
+      .text-banner_image-background {
+          height: 140px;
+          width: 140px;
+          border-radius: 30%;
+          background: -webkit-gradient(linear,left top,left bottom,from(#f0f0f0),color-stop(49.2%,#fcfcfc),to(#dfdfdf));
+          background: linear-gradient(180deg,#f0f0f0,#fcfcfc 49.2%,#dfdfdf);
+      
+      }
+      
+      .component-wrapper{
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+      }
+      
+      .catimg{
+          width: 100px;
+          max-width: 100%;
+          max-height: 100%;
+          border-style: none;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          position: absolute;
+          -webkit-transition: -webkit-transform .4s ease;
+          transition: transform .4s ease;
+          transition: -webkit-transform .4s ease;
+          transition: transform .4s ease,-webkit-transform .4s ease;
+          }
+          
+          .catimg:hover{
+                  -webkit-transform: scale(1);
+                  transform: scale(1);
+                  -webkit-transition: .2s ease-in-out;
+                  transition: .2s ease-in-out;
+                  -webkit-transform: scale(1.3);
+                  transform: scale(1.3);
+          }
+      
+          .category-label{
+              position: relative; top: 185px;
+          }
+      </style>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
+    <!-- Guarantee -->
+    <section class="pre-footer wrapped">
+      <hr>
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/dollar.png" alt="">
+          <p><span>Good quality-price</span>
+            <br>
+            All the items are a garbain</p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/shipped.png" alt="">
+          <p><span>Shop anywhere</span>
+            <br>
+            We ship anywherein the world</p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/credit-card.png" alt="">
+          <p><span>Secure payment</span>
+            <br>
+            Pay with the safest methods
+          </p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/customer-service.png" alt="">
+          <p><span>Costumer service</span>
+            <br>
+            24/7 assistance</p>
+        </a>
+        
+
+      </div>  
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <footer class="ajsfooter">
+
+      <!--Credit Card-->
+      <div id="ajsbottom-footer" class="ajssection">
+        <div class="ajscontainer">
+            <div class="ajsbottomrow">
+            <div class="col-md-12 text-center">
+                <ul class="ajsfooter-payments">
+                    <li><a href="#"><i class="fa-brands fa-cc-visa"></i></a></li>
+                    <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                    <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+      </div>
+      <!--Credot Card-->
+      
+      <!-- Grid container -->
+      <div class="ajsfooter-container">
+        <!-- Section: Social media -->
+        <section class="footer-social-media">
+          <!-- Facebook -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+    
+          <!-- Github -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Form -->
+        <section class="ajsfooter-form">
+          <form action="">
             <!--Grid row-->
-            <div class="row">
+            <div class="ajsfooter-text row d-flex justify-content-center">
               <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">About us</h5>
-      
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" class="text-white">
-                      <i class="fa-solid fa-location-dot"></i>
-                      &nbsp; &nbsp;My house</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">
-                      <i class="fa-solid fa-phone"></i>
-                      &nbsp; &nbsp;+194-40-49-58</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">
-                      <i class="fa-solid fa-envelope"></i>
-                      &nbsp; &nbsp;email@email.com</a>
-                  </li>
-                </ul>
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
               </div>
               <!--Grid column-->
-      
+    
               <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Categories</h5>
-      
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" class="text-white">Ironmongery</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Baby products</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">School supples</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Clothing</a>
-                  </li>
-                </ul>
+              
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div class="form-outline form-white mb-4">
+                  <input type="email" id="form5Example21" class="form-control" placeholder="Enter your E-mail"/>
+                  <label class="form-label" for="form5Example21">Email address</label>
+                </div>
               </div>
               <!--Grid column-->
-      
+    
               <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Information</h5>
-      
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" class="text-white">About us</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Contact Us</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Privat Policy</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Orders and Reurn</a>
-                  </li>
-                </ul>
-              </div>
-              <!--Grid column-->
-      
-              <!--Grid column-->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Services</h5>
-      
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" class="text-white">My Account</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">View Cart</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Wishlist</a>
-                  </li>
-                  <li>
-                    <a href="#!" class="text-white">Help</a>
-                  </li>
-                </ul>
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button type="submit" class=" footerbtn mb-4">
+                  Subscribe
+                </button>
               </div>
               <!--Grid column-->
             </div>
             <!--Grid row-->
-          </section>
-          <!-- Section: Links -->
-        </div>
-        <!-- Grid container -->
-      
-        <!-- Copyright -->
-        <div class="ajsbottombot text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2022 Copyright
-          <a class="text-white" href="https://mdbootstrap.com/"></a>
-        </div>
-        <!-- Copyright -->
-      </footer>
+          </form>
+        </section>
+        <!-- Section: Form -->
+    
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>
+            This is a e-commerce template which is not looking very good but we're working on it. 
+          </p>
+        </section>
+        <!-- Section: Text -->
+    
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">About us</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-location-dot"></i>
+                    &nbsp; &nbsp;My house</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-phone"></i>
+                    &nbsp; &nbsp;+194-40-49-58</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-envelope"></i>
+                    &nbsp; &nbsp;email@email.com</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Categories</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Ironmongery</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Baby products</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">School supples</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Clothing</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Information</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">About us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Privat Policy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Orders and Reurn</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+    
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase" style="position: relative; right:30px;">Services</h5>
+    
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">My Account</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">View Cart</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Wishlist</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Help</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="ajsbottombot text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+      </div>
+      <!-- Copyright -->
+    </footer>
 
 
+    
 
-      
-      
-  
+   
 
+    
 
-
-    <!-- Javascript -->
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js+slick.min.js.pagespeed.jc.3oMYTFFUTv.js"></script>
+    <script>
+      eval(mod_pagespeed_nePFsnc3nV);
+    </script>
+    <script>
+      eval(mod_pagespeed_wHSoBauwut);
+    </script>
+    <script src="js/slide.js"></script>
+    <script>
+      eval(mod_pagespeed_WlmYdmNQnI);
+    </script>
+    <script>
+      eval(mod_pagespeed_HxeDIjvTXK);
+    </script>
+    <script>
+      eval(mod_pagespeed_m624O2n4N4);
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+
   </body>
 </html>
