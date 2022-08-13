@@ -991,7 +991,7 @@ textarea.input {
 .pre-footer-item a p{
   display: inline-block;
   text-align: justify;
-  padding: 5px;
+  padding:3px;
   position: relative;
   top: 10px;
 }
