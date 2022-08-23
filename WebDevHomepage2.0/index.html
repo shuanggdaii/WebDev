@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AJS Store</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon type" type="image/x-icon" href="img/Favicon.ico">
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/3f0900afc2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script nonce="29c8ce91-0b43-4e23-a166-da1d51a9b6c3">
+      (function (w, d) {
+        !(function (a, e, t, r) {
+          a.zarazData = a.zarazData || {};
+          a.zarazData.executed = [];
+          a.zaraz = { deferred: [] };
+          a.zaraz.q = [];
+          a.zaraz._f = function (e) {
+            return function () {
+              var t = Array.prototype.slice.call(arguments);
+              a.zaraz.q.push({ m: e, a: t });
+            };
+          };
+          for (const e of ["track", "set", "ecommerce", "debug"])
+            a.zaraz[e] = a.zaraz._f(e);
+          a.zaraz.init = () => {
+            var t = e.getElementsByTagName(r)[0],
+              z = e.createElement(r),
+              n = e.getElementsByTagName("title")[0];
+            n && (a.zarazData.t = e.getElementsByTagName("title")[0].text);
+            a.zarazData.x = Math.random();
+            a.zarazData.w = a.screen.width;
+            a.zarazData.h = a.screen.height;
+            a.zarazData.j = a.innerHeight;
+            a.zarazData.e = a.innerWidth;
+            a.zarazData.l = a.location.href;
+            a.zarazData.r = e.referrer;
+            a.zarazData.k = a.screen.colorDepth;
+            a.zarazData.n = e.characterSet;
+            a.zarazData.o = new Date().getTimezoneOffset();
+            a.zarazData.q = [];
+            for (; a.zaraz.q.length; ) {
+              const e = a.zaraz.q.shift();
+              a.zarazData.q.push(e);
+            }
+            z.defer = !0;
+            for (const e of [localStorage, sessionStorage])
+              Object.keys(e || {})
+                .filter((a) => a.startsWith("_zaraz_"))
+                .forEach((t) => {
+                  try {
+                    a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t));
+                  } catch {
+                    a.zarazData["z_" + t.slice(7)] = e.getItem(t);
+                  }
+                });
+            z.referrerPolicy = "origin";
+            z.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(a.zarazData)));
+            t.parentNode.insertBefore(z, t);
+          };
+          ["complete", "interactive"].includes(e.readyState)
+            ? zaraz.init()
+            : a.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, 0, "script");
+      })(window, document);
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Header -->
+      <div id="header">
+        <div class="container">
+          <div class="row">
+            <div class="preheader col-md-3">
+              <div class="preheader-logo">
+                <a href="#" class="logo"> AJS Store </a>
+              </div>
+            </div>
+            <div class=" menu-header col-md-6">
+              <div class="menu-container">
+                <div class="v-center">
+                  <!-- menu start here -->
+                  <div class="header-item ">
+                    <div class="menu-overlay"></div>
+                    <nav class="menu" style="height:100%;">
+                      <div class="mobile-menu-head">
+                        <div class="go-back">
+                          <i class="fa fa-angle-left"></i>
+                        </div>
+                        <div class="current-menu-title"></div>
+                        <div class="mobile-menu-close">&times;</div>
+                      </div>
+                      <ul class="menu-main">
+                        <li class="menu-item-has-children" >
+                          <a class="menu-tile" fhref="#" style="color: #303234 ; font-size: 13px;width:120px; position: relative; top: 10px;"
+                            >All Categories <i class="fa fa-angle-down"></i
+                          ></a>
+                          <div class="sub-menu mega-menu mega-menu-column-4">
+                            <div class="list-item">
+                              <h4 class="title">Informatics</h4>
+                              <ul>
+                                <li><a href="#">Mobiles/Tablets</a></li>
+                                <li><a href="#">Computers</a></li>
+                                <li><a href="#">Peripherals</a></li>
+                                <li><a href="#">Audio & Video</a></li>
+                              </ul>
+                              <h4 class="title">Personal care</h4>
+                              <ul>
+                                <li><a href="#">Oral care</a></li>
+                                <li><a href="#">Bath & Body</a></li>
+                                <li><a href="#">Shave</a></li>
+                                <li><a href="#">Hair care</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">School & office supplies</h4>
+                              <ul>
+                                <li><a href="#">Notebooks</a></li>
+                                <li><a href="#">Backpacks</a></li>
+                                <li><a href="#">Writting Material</a></li>
+                                <li><a href="#">Handicraft Accesories</a></li>
+                              </ul>
+                              <h4 class="title">Toys and games</h4>
+                              <ul>
+                                <li><a href="#">Videos Games</a></li>
+                                <li><a href="#">Gift cards</a></li>
+                                <li><a href="#">Toys</a></li>
+                                <li><a href="#">Consoles</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Clothing</h4>
+                              <ul>
+                                <li><a href="#">Men's clothing</a></li>
+                                <li><a href="#">Women's clothing</a></li>
+                                <li><a href="#">Jewelry & Accessories</a></li>
+                                <li><a href="#">Shoes</a></li>
+                              </ul>
+                              <h4 class="title">Sports</h4>
+                              <ul>
+                                <li><a href="#">Bikes</a></li>
+                                <li><a href="#">Balls</a></li>
+                                <li><a href="#">Fitness & Exercise</a></li>
+                                <li><a href="#">Racquets</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Irongmongery</h4>
+                              <ul>
+                                <li><a href="#">Garden Accesories</a></li>
+                                <li><a href="#">Hand & Power Tools</a></li>
+                                <li><a href="#">Paint</a></li>
+                                <li><a href="#">Nails & Screws</a></li>
+                              </ul>
+                              <h4 class="title">Baby Products</h4>
+                              <ul>
+                                <li><a href="#">Bedding & Mattresses</a></li>
+                                <li>
+                                  <a href="#">Booster Seats & High Chairs</a>
+                                </li>
+                                <li><a href="#">Feeding</a></li>
+                                <li><a href="#">Baby Safety</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Home appliances</h4>
+                              <ul>
+                                <li><a href="#">Kitchen & Dinning</a></li>
+                                <li><a href="#">Refrigerators</a></li>
+                                <li><a href="#">Cleaning appliances</a></li>
+                                <li><a href="#">Microwaves</a></li>
+                                <li><a href="#">Dishwashers & Driyers</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Furniture</h4>
+                              <ul>
+                                <li><a href="#">Bedroom </a></li>
+                                <li><a href="#">Office </a></li>
+                                <li><a href="#">Living Room </a></li>
+                                <li><a href="#">Kitchen </a></li>
+                                <li><a href="#">Entryway</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Beauty</h4>
+                              <ul>
+                                <li><a href="#">Hair Care</a></li>
+                                <li><a href="#">Skin Care </a></li>
+                                <li><a href="#">Fragance </a></li>
+                                <li><a href="#">Makeup </a></li>
+                                <li><a href="#">Men's grooming</a></li>
+                              </ul>
+                            </div>
+                            <div class="list-item">
+                              <h4 class="title">Pet Accesories</h4>
+                              <ul>
+                                <li><a href="#">Dog </a></li>
+                                <li><a href="#">Cat </a></li>
+                                <li><a href="#">Fish</a></li>
+                                <li><a href="#">Reptile </a></li>
+                                <li><a href="#">Bird</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </nav>
+
+                    <!-- menu end here -->
+                    <!-- mobile menu trigger -->
+                    <div class="mobile-menu-trigger" style="color: white">
+                      <span style="color: white"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-search">
+                <form>
+                  <input class="input" placeholder="Search Product" />
+                  <button class="search-btn">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="menu-right col-md-3 clearfix">
+              <div class="header-ctn">
+                <div class="col-3">
+                  <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span>You Account</span>
+                  </a>
+                </div>
+                <div class="col-3">
+                  <a class="" href="#">
+                    <i class="fa fa-heart-o"></i>
+                    <span>Your Wishlist</span>
+                    <div class="qty">2</div>
+                  </a>
+                </div>
+                <div class="dropdown col-3">
+                  <a
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Your Cart</span>
+                    <div class="qty">5</div>
+                  </a>
+                  <div class="cart-dropdown">
+                    <div class="cart-list">
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img src="img/r4.jpeg" alt="" />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#">EASYWRING SPINMP MF KIT (Pack of 1) </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">
+                              <select class="input-select">
+                                <option value="1">1x</option>
+                                <option value="2">2x</option>
+                                <option value="3">3x</option>
+                                <option value="4">4x</option>
+                                <option value="5">5x</option>
+                              </select></span
+                            >28,90€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img src="img/r2.jpg" alt="" />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#"
+                              >Dove Body Wash Peony and Rose Oil Cleanser, 22 oz
+                            </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">
+                              <select class="input-select">
+                                <option value="1">1x</option>
+                                <option value="2">2x</option>
+                                <option value="3">3x</option>
+                                <option value="4">4x</option>
+                                <option value="5">5x</option>
+                              </select> </span
+                            >1,59€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
+                      <div class="product-widget">
+                        <div class="product-img">
+                          <img src="img/r5.webp" alt="" />
+                        </div>
+                        <div class="product-body">
+                          <h3 class="product-name">
+                            <a href="#"
+                              >Bounty Paper Napkins, White and Print, 200 Count
+                            </a>
+                          </h3>
+                          <h4 class="product-price">
+                            <span class="qty">
+                              <select class="input-select">
+                                <option value="1">1x</option>
+                                <option value="2">2x</option>
+                                <option value="3">3x</option>
+                                <option value="4">4x</option>
+                                <option value="5">5x</option>
+                              </select> </span
+                            >2,80€
+                          </h4>
+                        </div>
+                        <button class="delete">
+                          <i class="fa fa-close"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="cart-summary">
+                      <small>5 Item(s) selected</small>
+                      <h5>SUBTOTAL: 36,47€</h5>
+                    </div>
+                    <div class="cart-btns">
+                      <a href="#">View Cart</a>
+                      <a href="#"
+                        >Checkout <i class="fa fa-arrow-circle-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="menu-toggle">
+                  <a href="#">
+                    <i class="fa fa-bars"></i>
+                    <span>Menu</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Recommend -->
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h3 class="title">Recommend Products</h3>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="row">
+              <div class="products-tabs">
+                <div id="tab1" class="tab-pane active">
+                  <div class="products-slick" data-nav="#slick-nav-1">
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="img/r1.webp" alt="Recommend Product" />
+                        <div class="product-label">
+                          <span class="sale">-30%</span>
+                          <span class="new">NEW</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#"
+                            >Tide Clean Breeze HE, 64 Loads Liquid Laundry
+                            Detergent, 92 fl oz</a
+                          >
+                        </h3>
+                        <h4 class="product-price">
+                          5,90€ <del class="product-old-price">8,42€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="img/r2.jpg" alt="Recommend Product" />
+                        <div class="product-label">
+                          <span class="new">NEW</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#"
+                            >Dove Body Wash Peony and Rose Oil Cleanser, 22
+                            oz</a
+                          >
+                          <br />
+                          <br />
+                        </h3>
+                        <h4 class="product-price">
+                          1,59€ <del class="product-old-price">3,59€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="img/r3.webp" alt="Recommend Product" />
+                        <div class="product-label">
+                          <span class="sale">-30%</span>
+                        </div>
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#"
+                            >Scott Rapid-Dissolving Toilet Paper, 4 Regular
+                            Rolls</a
+                          >
+                          <br />
+                          <br />
+                        </h3>
+                        <h4 class="product-price">
+                          2,20€ <del class="product-old-price">3,14€</del>
+                        </h4>
+                        <div class="product-rating"></div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="img/r4.jpeg" alt="Recommend Product" />
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#">EASYWRING SPINMP MF KIT (Pack of 1)</a>
+                          <br />
+                          <br />
+                        </h3>
+                        <h4 class="product-price">
+                          28,90€ <del class="product-old-price">35,99€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="product">
+                      <div class="product-img">
+                        <img src="img/r5.webp" alt="Recommend Product" />
+                      </div>
+                      <div class="product-body">
+                        <p class="product-category">Category</p>
+                        <h3 class="product-name">
+                          <a href="#"
+                            >Bounty Paper Napkins, White and Print, 200 Count</a
+                          >
+                          <br />
+                          <br />
+                        </h3>
+                        <h4 class="product-price">
+                          2,80€ <del class="product-old-price">5,99€</del>
+                        </h4>
+                        <div class="product-rating">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-btns">
+                          <button class="add-to-wishlist">
+                            <i class="fa fa-heart-o"></i
+                            ><span class="tooltipp">add to wishlist</span>
+                          </button>
+                          <button class="add-to-compare">
+                            <i class="fa fa-exchange"></i
+                            ><span class="tooltipp">add to compare</span>
+                          </button>
+                          <button class="quick-view">
+                            <i class="fa fa-eye"></i
+                            ><span class="tooltipp">quick view</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="add-to-cart">
+                        <button class="add-to-cart-btn">
+                          <i class="fa fa-shopping-cart"></i> add to cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="slick-nav-1" class="products-slick-nav"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Membership -->
+    <div class="memb">
+      <div class="membs row container-fluid">
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img src="img/m1.webp" class="membimg" alt="Membership" />
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img
+            src="img/m2.webp"
+            class="membimg img-fluid rounded-start"
+            alt="Membership"
+          />
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img
+            src="img/m3.webp"
+            class="membimg img-fluid rounded-start"
+            alt="Membership"
+          />
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img
+            src="img/m4.webp"
+            class="membimg img-fluid rounded-start"
+            alt="Membership"
+          />
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img
+            src="img/m5.webp"
+            class="membimg img-fluid rounded-start"
+            alt="Membership"
+          />
+        </div>
+        <div class="memb-banner col-lg-2 col-md-6 col-6">
+          <img
+            src="img/m6.webp"
+            class="membimg img-fluid rounded-start"
+            alt="Membership"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+      <div class="maxwidth">
+        <div class="cattitle">Shop by categories</div>
+        <ul class="category-list">
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Informatics</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/gadgets.png"
+                      alt="Electronics"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Personal care</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/sink.png"
+                      alt="Personal Care"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">School supplies</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/office-supplies.png"
+                      alt="Office school supplies"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Toys and games</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/board-game.png"
+                      alt="Toys and games"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Clothing</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/clothes-rack.png"
+                      alt="Clothing"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Irongmongery</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/door-lock.png"
+                      alt="Irongmongery"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="categorylist2">
+        <ul class="category-list">
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Home Appliances</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/electric-appliance.png"
+                      alt="Home appliances"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Furniture</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img class="catimg" src="img/lamp.png" alt="Furniture" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Sports</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img class="catimg" src="img/sports.png" alt="Sports" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Beauty</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/makeup-pouch.png"
+                      alt="Bueauty"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Baby products</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/baby-products.png"
+                      alt="Baby products"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="text-banner-item">
+            <div class="component-wrapper">
+              <div class="text-banner">
+                <a class="text-banner-a" href="#">
+                  <div class="category-label">Pet accesories</div>
+                  <div class="text-banner_image-container">
+                    <div class="text-banner_image-background"></div>
+                    <img
+                      class="catimg"
+                      src="img/puppy.png"
+                      alt="Pet accesories"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+
+      .categories {
+        width: 100%;
+        margin-right: 0px;
+        position: relative;
+        top: 100px;
+      }
+
+      .text-banner {
+        background-color: transparent;
+        width: 160px;
+      }
+      .cattitle {
+        font-size: 25px;
+        width: 350px;
+        margin-right: 0px;
+        padding: 50px;
+        font-weight: bold;
+      }
+
+      .maxwidth {
+        width: 100%;
+      }
+      .category-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-gap: 10px;
+        text-align: center;
+        justify-items: center;
+        padding: 10px;
+        position: relative;
+        top: -20px;
+        width: 100%;
+      }
+
+      .text-banner-item {
+        display: grid;
+        grid-template-columns: repeat(autofit, (1fr));
+        grid-gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+        padding: 0px;
+        margin: 10px;
+        min-height: 100px;
+        text-align: center;
+        width: 170px;
+      }
+      .text-banner-a {
+        background-color: transparent;
+        text-decoration: none;
+        color: dimgray;
+      }
+
+      .text-banner_image-container {
+        position: relative;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        max-width: 300px;
+      }
+
+      .text-banner_image-background {
+        height: 120px;
+        width: 120px;
+        border-radius: 30%;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(#f0f0f0),
+          color-stop(49.2%, #fcfcfc),
+          to(#dfdfdf)
+        );
+        background: linear-gradient(180deg, #f0f0f0, #fcfcfc 49.2%, #dfdfdf);
+      }
+
+      .component-wrapper {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .catimg {
+        width: 100px;
+        max-width: 100%;
+        max-height: 100%;
+        border-style: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        -webkit-transition: -webkit-transform 0.4s ease;
+        transition: transform 0.4s ease;
+        transition: -webkit-transform 0.4s ease;
+        transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+      }
+
+      .catimg:hover {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+      }
+
+      .category-label {
+        position: relative;
+        top: 150px;
+      }
+    </style>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <!-- Guarantee -->
+    <div class="pre-footer wrapped">
+      <hr />
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/dollar.png" alt="" />
+          <p>
+            <span>Good quality-price</span>
+            <br />
+            All the items are a garbain
+          </p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/shipped.png" alt="" />
+          <p>
+            <span>Shop anywhere</span>
+            <br />
+            Ship anywhere around world
+          </p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/credit-card.png" alt="" />
+          <p>
+            <span>Secure payment</span>
+            <br />
+            Pay with the safest methods
+          </p>
+        </a>
+      </div>
+
+      <div class="pre-footer-item col-md-3 col-sm-6 col-xs-6">
+        <a href="#">
+          <img src="img/customer-service.png" alt="" />
+          <p>
+            <span>Costumer service</span>
+            <br />
+            24/7 assistance
+          </p>
+        </a>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer class="ajsfooter">
+      <!--Credit Card-->
+      <div id="ajsbottom-footer" class="ajssection">
+        <div class="ajscontainer">
+          <div class="ajsbottomrow">
+            <div class="col-md-12 text-center">
+              <ul class="ajsfooter-payments">
+                <li>
+                  <a href="#"><i class="fa-brands fa-cc-visa"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-credit-card"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-paypal"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-mastercard"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-discover"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-cc-amex"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Credot Card-->
+
+      <!-- Grid container -->
+      <div class="ajsfooter-container">
+        <!-- Section: Social media -->
+        <section class="footer-social-media">
+          <!-- Facebook -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Google -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <!-- Github -->
+          <a class="ajsfooter-btn btn" href="#!" role="button"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="ajsfooter-form">
+          <form action="">
+            <!--Grid row-->
+            <div class="ajsfooter-text row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+
+              <div class="col-md-5 col-12">
+                <!-- Email input -->
+                <div class="form-outline form-white mb-4">
+                  <input
+                    type="email"
+                    id="form5Example21"
+                    class="form-control"
+                    placeholder="Enter your E-mail"
+                  />
+                  <label class="form-label" for="form5Example21"
+                    >Email address</label
+                  >
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-auto">
+                <!-- Submit button -->
+                <button type="submit" class="footerbtn mb-4">Subscribe</button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+        <section class="mb-4">
+          <p>
+            This is a e-commerce template which is not looking very good but
+            we're working on it.
+          </p>
+        </section>
+        <!-- Section: Text -->
+
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">About us</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-location-dot"></i>
+                    &nbsp; &nbsp;My house</a
+                  >
+                </li>
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-phone"></i>
+                    &nbsp; &nbsp;+194-40-49-58</a
+                  >
+                </li>
+                <li>
+                  <a href="#!" class="text-white">
+                    <i class="fa-solid fa-envelope"></i>
+                    &nbsp; &nbsp;email@email.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Categories</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">Ironmongery</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Baby products</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">School supples</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Clothing</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Information</h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">About us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Privat Policy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Orders and Reurn</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5
+                class="text-uppercase"
+                style="position: relative; right: 30px"
+              >
+                Services
+              </h5>
+
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white">My Account</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">View Cart</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Wishlist</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">Help</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="ajsbottombot text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2022 Copyright
+        <a class="text-white" href="https://mdbootstrap.com/"></a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js+slick.min.js.pagespeed.jc.3oMYTFFUTv.js"></script>
+    <script src="js/menuscript.js"></script>
+    <script>
+      eval(mod_pagespeed_nePFsnc3nV);
+    </script>
+    <script>
+      eval(mod_pagespeed_wHSoBauwut);
+    </script>
+    <script src="js/slide.js"></script>
+    <script>
+      eval(mod_pagespeed_WlmYdmNQnI);
+    </script>
+    <script>
+      eval(mod_pagespeed_HxeDIjvTXK);
+    </script>
+    <script>
+      eval(mod_pagespeed_m624O2n4N4);
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+  </body>
+</html>
