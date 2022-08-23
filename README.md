@@ -23,6 +23,10 @@ Individual item page:
 Checkout page: Order and payment 
 
 
+User/register page
+
+
+
 Target User: 
 The store web is available to a wide public, whoever has the shopping desire, especially those who are too lazy to shop physically, who wish for fast and efficient delivery, as well as those who have a disability that makes it difficult for them to shop in person. 
 
