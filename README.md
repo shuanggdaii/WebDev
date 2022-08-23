@@ -21,6 +21,8 @@ Individual item page:
 - reviews
 
 Checkout page: Order and payment 
+User/register page
+
 
 
 Target User: 
