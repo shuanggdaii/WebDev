@@ -8,9 +8,7 @@ home page:
 - search bar (search items)
 - user-friendly navigation bar (logically categorized products)
 - add cart
-- recommend or on-sale goods
-
-Items page: All items will be listed on this page with its price and some images that show the good adequately. 
+- recommend or on-sale goods 
 
 Individual item page: 
 - purchase
