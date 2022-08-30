@@ -3046,4 +3046,10 @@ textarea.input {
     float: none;
     margin-top: 10px;
   }
+  .section-title{
+    position:relative; left:20px;
+  }
+  .cattitle{
+    position: relative; right:40px;
+  }
 }
